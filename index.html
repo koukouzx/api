@@ -6,8 +6,8 @@
     <!-- Adicionando Javascript -->
     <script type="text/javascript" >
     
-    function limpa_formul·rio_cep() {
-            //Limpa valores do formul·rio de cep.
+    function limpa_formulario_cep() {
+            //Limpa valores do formul√°rio de cep.
             document.getElementById('rua').value=("");
             document.getElementById('bairro').value=("");
             document.getElementById('cidade').value=("");
@@ -25,21 +25,21 @@
             document.getElementById('ibge').value=(conteudo.ibge);
         } //end if.
         else {
-            //CEP n„o Encontrado.
-            limpa_formul·rio_cep();
-            alert("CEP n„o encontrado.");
+            //CEP nao Encontrado.
+            limpa_formulario_cep();
+            alert("CEP nao encontrado.");
         }
     }
         
     function pesquisacep(valor) {
 
-        //Nova vari·vel "cep" somente com dÌgitos.
+        //Nova vari√°vel "cep" somente com d√≠gitos.
         var cep = valor.replace(/\D/g, '');
 
         //Verifica se campo cep possui valor informado.
         if (cep != "") {
 
-            //Express„o regular para validar o CEP.
+            //Express√£o regular para validar o CEP.
             var validacep = /^[0-9]{8}$/;
 
             //Valida o formato do CEP.
@@ -58,19 +58,19 @@
                 //Sincroniza com o callback.
                 script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
 
-                //Insere script no documento e carrega o conte˙do.
+                //Insere script no documento e carrega o conte√∫do.
                 document.body.appendChild(script);
 
             } //end if.
             else {
-                //cep È inv·lido.
-                limpa_formul·rio_cep();
-                alert("Formato de CEP inv·lido.");
+                //cep √© inv√°lido.
+                limpa_formul√°rio_cep();
+                alert("Formato de CEP invalido.");
             }
         } //end if.
         else {
-            //cep sem valor, limpa formul·rio.
-            limpa_formul·rio_cep();
+            //cep sem valor, limpa formul√°rio.
+            limpa_formul√°rio_cep();
         }
     };
 
